@@ -31,22 +31,21 @@ limitations under the License.
 
 #ifdef ARDUINO
 
-#if defined(ARDUINO_ARDUINO_NANO33BLE)
 #include <cstdint>
 
-#include "button.h"
-#include "led.h"
-#include "ws_wm8960_audio_hat_nrf52840.h"
+//#include "button.h"
+//#include "led.h"
+//#include "ws_wm8960_audio_hat_nrf52840.h"
 
-#define AUDIO_DEVICE_WS_WM8960_AUDIO_HAT \
-  &peripherals::WS_WM8960_AudioHat_NRF52840::Instance()
+//#define AUDIO_DEVICE_WS_WM8960_AUDIO_HAT \
+//  &peripherals::WS_WM8960_AudioHat_NRF52840::Instance()
 
 namespace peripherals {
 
-constexpr PinName kI2S_BIT_CLK = P0_27;   // D9
-constexpr PinName kI2S_LR_CLK = P1_2;     // D10
-constexpr PinName kI2S_DATA_IN = P1_12;   // D3
-constexpr PinName kI2S_DATA_OUT = P1_11;  // D2
+constexpr unsigned int kI2S_BIT_CLK = 0;   // D9
+constexpr unsigned int kI2S_LR_CLK = 0;     // D10
+constexpr unsigned int kI2S_DATA_IN = 0;   // D3
+constexpr unsigned int kI2S_DATA_OUT = 0;  // D2
 constexpr uint32_t kI2S_IRQ_PRIORITY = 7;
 
 constexpr uint32_t kI2C_CLOCK = 100000;
@@ -57,10 +56,6 @@ constexpr pin_size_t kLED_DEFAULT_GPIO = D13;
 
 }  // namespace peripherals
 
-#else  // ARDUINO_ARDUINO_NANO33BLE
-#error "unsupported board"
-
-#endif  // ARDUINO_ARDUINO_NANO33BLE
 
 #endif  // ARDUINO
 
