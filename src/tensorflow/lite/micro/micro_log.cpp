@@ -37,10 +37,6 @@ void Log(const char* format, va_list args) {
 #endif
 }
 
-void DebugLog(const char *s) {
-  return;
-}
-
 #if !defined(TF_LITE_STRIP_ERROR_STRINGS)
 void MicroPrintf(const char* format, ...) {
   va_list args;
